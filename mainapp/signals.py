@@ -7,5 +7,5 @@ from mainapp.photo_edit import PhotoEditService
 @receiver(post_save, sender=PhotoEdit)
 def update_photo(sender, instance, created, **kwargs):
     if created:
-        service = PhotoEditService(instance.image.path)
+        service = PhotoEditService(instance.id)
         service.photo_edit()
